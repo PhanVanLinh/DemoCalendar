@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.nguyenminhduong.democalendar.adapter.ItemHolidayCalendarViewModel"
+            />
+    </data>
+    <LinearLayout
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <com.example.nguyenminhduong.democalendar.widget.holidaycalendar.HolidayCalendarView
+            android:id="@+id/timeSheetView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_320"
+            android:background="@android:color/white"
+            app:holidayCalendarDates="@{viewModel.listHolidayDate}"
+            app:month="@{viewModel.month}"
+            app:onHolidayDayClick="@{viewModel::onDayClicked}"
+            app:year="@{viewModel.year}"
+            />
+
+    </LinearLayout>
+</layout>
